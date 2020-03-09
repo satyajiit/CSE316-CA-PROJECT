@@ -119,25 +119,6 @@ printf("\n\nWhy don't you enter the number of process: ");
 
 scanf("%d",&n);
 
-//Using loop to take details for n number of prcesses
-for(i = 0; i < n; i++){
-
-
-processList[i].processNumber = i+1;
-
-printf("\n\nInputs For P%d process:-\n", processList[i].processNumber);
-
-printf("Input Arrival Time of Process: ");
-scanf("%d", &processList[i].arrivalTime );
-
-printf("Input Burst Time: ");
-scanf("%d", &processList[i].burstTime);
-
-processList[i].flag = 0;
-
-b_t = b_t + processList[i].burstTime;
-
-}
 
 
 

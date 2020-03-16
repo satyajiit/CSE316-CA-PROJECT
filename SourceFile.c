@@ -139,7 +139,73 @@ b_t = b_t + processList[i].burstTime;
 
 }
 
+//Apply Sorting on the processesData
+Sorting();
 
+//Initialise Array "a" with burstTime of all the stored Processes
+for(int i=0;i<n;i++){
+
+a[i]=processList[i].burstTime;
+}
+
+//Randomly Assigning the last Process highest burstTime
+processList[9].burstTime = 9999;
+
+//Performing on the arrivalTime
+for(t = processList[0].arrivalTime; t <= b_t+1;){
+
+peak = 9;
+for(i=0;i<n;i++){
+
+if(processList[i].arrivalTime <= t && processList[i].burstTime < processList[peak].burstTime && processList[i].flag != 1)
+{
+peak = i;
+}
+if(processList[peak].burstTime==0 && processList[i].flag != 1){
+
+
+processList[i].flag = 1;
+processList[peak].closingTime=t;processList[peak].burstTime=9999;
+printf("P%d completes in %d\n",
+processList[i].processNumber,
+processList[peak].closingTime);
+
+}
+}
+t++;
+(processList[peak].burstTime)--;
+}
+
+//Calculating the average Timings
+for(i=0;i<n;i++)
+{
+processList[i].turnAroundTime=(processList[i].closingTime)-(processList[i].arrivalTime);
+
+avgTurnAroundTime=avgTurnAroundTime+processList[i].turnAroundTime;
+
+processList[i].waitTime=((processList[i].turnAroundTime)-a[i]);
+
+avgWaitTime=avgWaitTime+processList[i].waitTime;
+}
+
+
+//Print the Titles
+printf("\n\nPNO\tAT\tCT\tTA\tWTt\n");
+
+//Show the resopective Values under the row
+for(i=0;i<n;i++)
+{
+printf("P%d\t%d\t%d\t%d\t%d\n",
+processList[i].processNumber,
+processList[i].arrivalTime,
+processList[i].closingTime,
+processList[i].turnAroundTime,
+processList[i].waitTime);
+ }
+ 
+//Final Output 
+printf("\n\nAverage Turn around Time: %f\t\n\n",avgTurnAroundTime);
+printf("Average Waiting Time :\t %f\t\n",avgWaitTime);
 
 
 }

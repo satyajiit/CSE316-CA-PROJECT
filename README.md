@@ -10,3 +10,7 @@ A uniprocessor system has n number of CPU intensive processes, each process has 
 
 ## SCREENSHOT 2
 <img src="/Screenshots/ss2.png"/>
+
+#### Why don't we get connected?
+[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://satyajiit.xyz)
+[![GitHub followers](https://img.shields.io/github/followers/satyajiit?style=social&label=Follow&maxAge=2592000)](https://github.com/satyajiit?tab=followers)
